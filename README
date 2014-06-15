@@ -1,0 +1,7 @@
+0. configure and make packetdrill 
+
+1. To run the packetdrill tests on one computer simple run ./approximate_tests.sh (need sudo permissions and for packetdrill to be in the same directory unmodified. It it can't find the path change the pathname in ./approximate_tests.sh
+
+2. To run the packetdrill tests using another computer, packetdrill and the approximate option must be set on that computer as well. On the receiving computer packetdrill --wire_server must be running
+
+3. To run the non-packetdrill test run simple run other_approximate.sh on the server computer and on the receiving computer, but include the ip_address of the server as the argument on the receiving argument

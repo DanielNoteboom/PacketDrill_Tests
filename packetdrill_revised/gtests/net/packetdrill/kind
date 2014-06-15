@@ -1,0 +1,35 @@
+./run_packet.c:		if (option->kind == TCPOPT_TIMESTAMP) {
+./run_packet.c:			packet->tcp_ts_val = &(option->data.time_stamp.val);
+./run_packet.c:			packet->tcp_ts_ecr = &(option->data.time_stamp.ecr);
+./run_packet.c:		if (option->kind == TCPOPT_SACK) {
+./run_packet.c:			if (num_sack_blocks(option->length,
+./run_packet.c:				val = ntohl(option->data.sack.block[i].left);
+./run_packet.c:				option->data.sack.block[i].left = htonl(val);
+./run_packet.c:				val = ntohl(option->data.sack.block[i].right);
+./run_packet.c:				option->data.sack.block[i].right = htonl(val);
+./tcp_options_to_string.c:	if ((option->length < TCPOLEN_EXP_FASTOPEN_BASE) ||
+./tcp_options_to_string.c:	    (ntohs(option->data.fast_open.magic) != TCPOPT_FASTOPEN_MAGIC))
+./tcp_options_to_string.c:	int cookie_bytes = option->length - TCPOLEN_EXP_FASTOPEN_BASE;
+./tcp_options_to_string.c:		fprintf(s, "%02x", option->data.fast_open.cookie[i]);
+./tcp_options_to_string.c:		switch (option->kind) {
+./tcp_options_to_string.c:			fprintf(s, "mss %u", ntohs(option->data.mss.bytes));
+./tcp_options_to_string.c:				option->data.window_scale.shift_count);
+./tcp_options_to_string.c:			if (num_sack_blocks(option->length,
+./tcp_options_to_string.c:					ntohl(option->data.sack.block[i].left),
+./tcp_options_to_string.c:					ntohl(option->data.sack.block[i].right));
+./tcp_options_to_string.c:				ntohl(option->data.time_stamp.val),
+./tcp_options_to_string.c:				ntohl(option->data.time_stamp.ecr));
+./tcp_options_to_string.c:				 option->kind);
+./tcp_options.c:	option->kind = kind;
+./tcp_options.c:	option->length = length;
+./tcp_options.c:	if (options->length + option->length > sizeof(options->data))
+./tcp_options.c:	memcpy(options->data + options->length, option, option->length);
+./tcp_options.c:	options->length += option->length;
+./parser.y:	option->data.fast_open.magic = htons(TCPOPT_FASTOPEN_MAGIC);
+./parser.y:	if (parse_hex_string(cookie_string, option->data.fast_open.cookie,
+./parser.y:			     sizeof(option->data.fast_open.cookie),
+./parser.c:	option->data.fast_open.magic = htons(TCPOPT_FASTOPEN_MAGIC);
+./parser.c:	if (parse_hex_string(cookie_string, option->data.fast_open.cookie,
+./parser.c:			     sizeof(option->data.fast_open.cookie),
+./tcp_options_iterator.c:		    option->kind, &expected_length, error))
+Binary file ./.tcp_options_to_string.c.swp matches
